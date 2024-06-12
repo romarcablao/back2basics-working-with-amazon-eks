@@ -1,0 +1,5 @@
+environment     = "demo"
+cluster_name    = "awscb-cluster"
+cluster_version = "1.30"
+region          = "ap-southeast-1"
+vpc_cidr        = "10.0.0.0/16"

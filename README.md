@@ -1,6 +1,6 @@
 # Back2Basics Series: Working With Amazon Elastic Kubernetes Service (EKS)
 
-![Back2Basics: Working With Amazon EKS](./docs/back2basics-eks-banner.jpg)
+![Back2Basics: Working With Amazon EKS](https://raw.githubusercontent.com/romarcablao/back2basics-working-with-amazon-eks/4c39854a2b806e1b1cd21e230334c3f77c81b068/docs/back2basics-eks-banner.jpg)
 
 ## Installation
 > Depending on your OS, select the installation method here: https://opentofu.org/docs/intro/install/

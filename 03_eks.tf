@@ -68,7 +68,7 @@ module "eks" {
         node    = "initial"
       }
 
-      # Uncomment this if you want to use Karpenter
+      # Uncomment this if you will use Karpenter
       # taints = {
       #   init = {
       #     key    = "node"

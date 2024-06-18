@@ -98,7 +98,7 @@
 #     app = "vote-app"
 #   }
 #   taints = [
-#     { key = "vote-app", effect = "NoSchedule" }
+#     { key = "app", value = "vote-app", effect = "NoSchedule" }
 #   ]
 #   capacity_type        = ["spot"]
 #   consolidation_policy = "WhenUnderutilized"
@@ -118,7 +118,7 @@
 #     app = "grafana"
 #   }
 #   taints = [
-#     { key = "grafana", effect = "NoSchedule" }
+#     { key = "app", value = "grafana", effect = "NoSchedule" }
 #   ]
 #   capacity_type        = ["spot"]
 #   consolidation_policy = "WhenEmpty"

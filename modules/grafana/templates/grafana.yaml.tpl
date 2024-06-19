@@ -11,12 +11,13 @@ autoscaling:
   behavior: {}
 
 tolerations:
-- key: "grafana"
-  operator: "Exists"
+- key: "app"
+  operator: "Equal"
+  value: "monitoring"
   effect: "NoSchedule"
 
 nodeSelector:
-  app: grafana
+  app: monitoring
 
 affinity:
   podAntiAffinity:

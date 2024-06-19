@@ -1,0 +1,8 @@
+commonAnnotations:
+  note: "Back2Basics: A Series"
+
+resources:
+  - ../../base
+
+patches:
+- path: deployment-patch.yaml

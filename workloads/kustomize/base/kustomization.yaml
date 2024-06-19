@@ -1,0 +1,7 @@
+resources:
+  - ingress.yaml
+  - postgresql.yaml
+  - redis.yaml
+  - results-app.yaml
+  - vote-app.yaml
+  - worker.yaml

@@ -1,0 +1,40 @@
+# Ingress Config
+ingress:
+  className: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+
+# Vote Handler Config
+vote:
+  tolerations:
+    - key: app
+      operator: Equal
+      value: vote-app
+      effect: NoSchedule
+  nodeSelector:
+    app: vote-app
+  service:
+    type: NodePort
+
+# Results Handler Config
+result:
+  tolerations:
+    - key: app
+      operator: Equal
+      value: vote-app
+      effect: NoSchedule
+  nodeSelector:
+    app: vote-app
+  service:
+    type: NodePort
+    
+# Worker Handler Config
+worker:
+  tolerations:
+    - key: app
+      operator: Equal
+      value: vote-app
+      effect: NoSchedule
+  nodeSelector:
+    app: vote-app

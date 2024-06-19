@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: worker
+data:
+  DB_HOST: postgres
+  REDIS_HOST: redis
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:       
+  name: worker
+  labels:
+    app: worker
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: worker
+        image: romarcablao/app-worker:1.0
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: worker
+              key: DB_HOST
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: worker
+              key: REDIS_HOST
+        resources:
+          requests:
+            cpu: 100m
+            memory: 60Mi
+          limits:
+            cpu: 200m
+            memory: 120Mi
+      tolerations:
+      - key: app
+        operator: Equal
+        value: vote-app
+        effect: NoSchedule
+      nodeSelector:
+        app: vote-app

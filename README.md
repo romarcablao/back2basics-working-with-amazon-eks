@@ -2,7 +2,7 @@
 
 ![Back2Basics: Working With Amazon EKS](https://raw.githubusercontent.com/romarcablao/back2basics-working-with-amazon-eks/main/docs/back2basics-eks-banner.jpg)
 
-> Read the series here: [Back2Basics: Amazon EKS](https://dev.to/romarcablao/series/27773)
+> Read the series here: [Back2Basics: Amazon EKS](https://dev.to/romarcablao/series/27819)
 
 ## Installation
 > Depending on your OS, select the installation method here: https://opentofu.org/docs/intro/install/

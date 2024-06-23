@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seeder
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: seeder
+  template:
+    metadata:
+      labels:
+        app: seeder
+    spec:
+      containers:
+      - name: seeder
+        image: romarcablao/app-seeder:1.0
+        env:
+        - name: VOTE_URL
+          value: "http://app-vote.voting-app.svc.cluster.local/"
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 100m
+          requests:
+            memory: 64Mi
+            cpu: 50m

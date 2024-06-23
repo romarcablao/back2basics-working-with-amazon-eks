@@ -108,17 +108,17 @@
 #   ]
 # }
 
-# module "karpenter_node_grafana" {
+# module "karpenter_node_monitoring" {
 #   source = "./modules/karpenter_node"
 
-#   name               = "grafana"
+#   name               = "monitoring"
 #   cluster_name       = module.eks.cluster_name
 #   node_iam_role_name = module.karpenter.node_iam_role_name
 #   labels = {
-#     app = "grafana"
+#     app = "monitoring"
 #   }
 #   taints = [
-#     { key = "app", value = "grafana", effect = "NoSchedule" }
+#     { key = "app", value = "monitoring", effect = "NoSchedule" }
 #   ]
 #   capacity_type        = ["spot"]
 #   consolidation_policy = "WhenEmpty"

@@ -10,6 +10,16 @@ autoscaling:
   targetMemory: ""
   behavior: {}
 
+service:
+  type: NodePort
+ingress:
+  enabled: true
+  hosts: []
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/scheme: internet-facing
+
 tolerations:
 - key: "app"
   operator: "Equal"

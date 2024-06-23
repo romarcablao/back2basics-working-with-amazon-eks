@@ -1,7 +1,7 @@
 # module "ebs_csi_driver" {
 #   source = "./modules/aws_ebs_csi"
 
-#   cluster_name  = module.eks.cluster_name
+#   cluster_name = module.eks.cluster_name
 
 #   depends_on = [
 #     helm_release.karpenter
@@ -34,25 +34,27 @@
 # }
 
 # module "grafana" {
-#   count = var.enable_grafana ? 1 : 0
+#   count  = var.enable_grafana ? 1 : 0
 #   source = "./modules/grafana"
 
 #   addon_version = "8.0.1"
 #   cluster_name  = module.eks.cluster_name
 
 #   depends_on = [
-#     helm_release.karpenter
+#     helm_release.karpenter,
+#     module.ebs_csi_driver
 #   ]
 # }
 
 # module "prometheus" {
-#   count = var.enable_prometheus ? 1 : 0
+#   count  = var.enable_prometheus ? 1 : 0
 #   source = "./modules/prometheus"
 
 #   addon_version = "25.21.0"
 #   cluster_name  = module.eks.cluster_name
 
 #   depends_on = [
-#     helm_release.karpenter
+#     helm_release.karpenter,
+#     module.ebs_csi_driver
 #   ]
 # }
